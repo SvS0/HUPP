@@ -11,7 +11,7 @@ public class House
     private int id;
     private String name;
     private String address;
-    private List<Tenant> tenants = new ArrayList<Tenant>();
+    private List<Lease> leases = new ArrayList<Lease>();
 
     public House() { }
 
@@ -34,12 +34,12 @@ public class House
         this.id = id;
     }
 
-    public List<Tenant> getTenants() {
-        return tenants;
+    public List<Lease> getTenants() {
+        return leases;
     }
 
-    public void setTenants(List<Tenant> tenants) {
-        this.tenants = tenants;
+    public void setTenants(List<Lease> leases) {
+        this.leases = leases;
     }
 
     public String getAddress() {
