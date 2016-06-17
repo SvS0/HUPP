@@ -10,8 +10,8 @@ public class Tenant
 {
     private int id;
     private String name;
-    private List<Lease> leases = new ArrayList<Lease>();
-    private List<Room> rooms = new ArrayList<>();
+    private List<Lease> houseLeases = new ArrayList<>();
+    private List<Lease> roomLeases = new ArrayList<>();
 
     public Tenant() { }
 
@@ -36,20 +36,29 @@ public class Tenant
         this.name = name;
     }
 
-    public List<Lease> getLeases() {
-        return leases;
+    public List<Lease> getHouseLeases() {
+        return houseLeases;
     }
 
-    public void setLeases(List<Lease> leases) {
-        this.leases = leases;
+    public void setHouseLeases(List<Lease> houseLeases) {
+        this.houseLeases = houseLeases;
     }
 
-    public List<Room> getRooms() {
-        return rooms;
+    public void addHouseLease(Lease lease){
+        this.houseLeases.add(lease);
+        lease.setTenant(this);
     }
 
-    public void setRooms(List<Room> rooms) {
-        this.rooms = rooms;
+    public List<Lease> getRoomLeases() {
+        return roomLeases;
+    }
+
+    public void setRoomLeases(List<Lease> roomLeases) {
+        this.roomLeases = roomLeases;
+    }
+
+    public void addRoomLease(Lease lease){
+        this.roomLeases.add(lease);
     }
 
     @Override
@@ -57,6 +66,10 @@ public class Tenant
         return "Tenant{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", houseLeases=" + houseLeases +
+                ", roomLeases=" + roomLeases +
                 '}';
     }
 }
+
+

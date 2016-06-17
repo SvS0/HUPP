@@ -6,40 +6,40 @@ import java.util.List;
 /**
  * Created by Jesús Atalaya on 17/06/2016.
  */
-public class House
-{
+public class House {
     private int id;
     private String name;
     private String address;
-    private List<Lease> leases = new ArrayList<Lease>();
+    private List<Room> rooms = new ArrayList<>();
+    private List<Lease> leases = new ArrayList<>();
 
-    public House() { }
-
-    public House(String address)
-    {
-        this.address = address;
+    public House() {
     }
 
-    public House(String name, String address)
-    {
-        this.name = name;
-        this.address = address;
+    public List<Room> getRooms() {
+        return rooms;
     }
 
-    public int getId() {
-        return id;
+    public void setRooms(List<Room> rooms) {
+        this.rooms = rooms;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void addRoom(Room room){
+        this.rooms.add(room);
+        room.setHouse(this);
     }
 
-    public List<Lease> getTenants() {
+    public List<Lease> getLeases() {
         return leases;
     }
 
-    public void setTenants(List<Lease> leases) {
+    public void setLeases(List<Lease> leases) {
         this.leases = leases;
+    }
+
+    public void addLease(Lease lease){
+        this.leases.add(lease);
+        lease.setHouse(this);
     }
 
     public String getAddress() {
@@ -58,12 +58,22 @@ public class House
         this.name = name;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "House{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
+                ", rooms=" + rooms +
+                ", leases=" + leases +
                 '}';
     }
 }

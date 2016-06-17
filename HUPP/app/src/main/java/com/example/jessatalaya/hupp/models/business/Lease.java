@@ -10,6 +10,7 @@ public class Lease
     private int id;
     private Tenant tenant;
     private House house;
+    private Room room;
     private Date beginning;
     private Date finish;
 
@@ -55,14 +56,23 @@ public class Lease
         this.house = house;
     }
 
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
     @Override
     public String toString() {
         return "Lease{" +
                 "id=" + id +
-                ", tenant=" + tenant +
-                ", house=" + house +
+                ", tenant=" + tenant.getId() +
+                ", house=" + house.getId() +
+                ", room=" + room.getId() +
                 ", beginning=" + beginning +
                 ", finish=" + finish +
-                '}';
+                "'}'";
     }
 }

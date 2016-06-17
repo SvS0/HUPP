@@ -10,8 +10,8 @@ public class Room
 {
     private int id;
     private String name;
-    private List<Tenant> owners = new ArrayList<Tenant>();
     private House house;
+    private List<Lease> leases = new ArrayList<Lease>();
 
     public Room() { }
 
@@ -31,12 +31,17 @@ public class Room
         this.name = name;
     }
 
-    public List<Tenant> getOwners() {
-        return owners;
+    public List<Lease> getLeases() {
+        return leases;
     }
 
-    public void setOwners(List<Tenant> owners) {
-        this.owners = owners;
+    public void setLeases(List<Lease> leases) {
+        this.leases = leases;
+    }
+
+    public void addLease(Lease lease){
+        this.leases.add(lease);
+        lease.setRoom(this);
     }
 
     public House getHouse() {
@@ -52,6 +57,8 @@ public class Room
         return "Room{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", house=" + house.getId() +
+                ", leases=" + leases +
                 '}';
     }
 }

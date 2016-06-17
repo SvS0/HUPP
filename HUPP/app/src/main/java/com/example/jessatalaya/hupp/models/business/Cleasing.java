@@ -21,5 +21,81 @@ public class Cleasing
     public Cleasing() {
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public List<CleasingTask> getTask() {
+        return task;
+    }
+
+    public void setTask(List<CleasingTask> task) {
+        this.task = task;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
+    public Date getBeginning() {
+        return beginning;
+    }
+
+    public void setBeginning(Date beginning) {
+        this.beginning = beginning;
+    }
+
+    public Date getFinish() {
+        return finish;
+    }
+
+    public void setFinish(Date finish) {
+        this.finish = finish;
+    }
+
+    public Date getDone() {
+        return done;
+    }
+
+    public void setDone(Date done) {
+        this.done = done;
+    }
+
+    public Tenant getTenant() {
+        return tenant;
+    }
+
+    public void setTenant(Tenant tenant) {
+        this.tenant = tenant;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    @Override
+    public String toString() {
+        return "Cleasing{" +
+                "id=" + id +
+                ", task=" + task +
+                ", room=" + room +
+                ", beginning=" + beginning +
+                ", finish=" + finish +
+                ", done=" + done +
+                ", tenant=" + tenant +
+                ", rating=" + rating +
+                '}';
+    }
 }

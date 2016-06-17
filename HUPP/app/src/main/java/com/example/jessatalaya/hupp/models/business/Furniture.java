@@ -59,6 +59,9 @@ public class Furniture
         return "Furniture{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", owner=" + owner +
+                ", room=" + room +
                 '}';
     }
+
 }

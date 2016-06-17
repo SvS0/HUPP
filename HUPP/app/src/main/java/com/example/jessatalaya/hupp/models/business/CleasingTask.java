@@ -66,8 +66,7 @@ public class CleasingTask
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "CleasingTask{" +
                 "id=" + id +
                 ", task='" + task + '\'' +
